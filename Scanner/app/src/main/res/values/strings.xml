@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Scanner</string>
+    <string name="capture">Capture</string>
+    <string name="alert_msg">This App needs camera and storage permission to work. Please grant to proceed.</string>
+    <string name="ok">Ok</string>
+    <string name="permission_reqd_title">Permissions Required</string>
+</resources>
