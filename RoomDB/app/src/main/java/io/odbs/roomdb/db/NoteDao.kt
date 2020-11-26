@@ -6,7 +6,7 @@ import androidx.room.*
 interface NoteDao {
 
     @Query("SELECT * FROM noteTable")
-    fun getAllNotes() : List<Note>
+    fun getAllNotes() : List<Note>?
 
     @Query("SELECT * FROM notetable WHERE title LIKE :title")
     fun findByTitle(title: String): Note
