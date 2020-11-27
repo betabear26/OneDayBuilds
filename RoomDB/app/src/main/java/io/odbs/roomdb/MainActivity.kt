@@ -9,6 +9,7 @@ import io.odbs.roomdb.fragment.NoteListFragment
 import io.odbs.roomdb.fragment.listeners.NoteListFragmentInteractionListener
 import io.odbs.roomdb.utils.Constants
 import io.odbs.roomdb.utils.DataManager
+import kotlin.concurrent.thread
 
 class MainActivity : AppCompatActivity(), NoteListFragmentInteractionListener {
 
@@ -29,15 +30,21 @@ class MainActivity : AppCompatActivity(), NoteListFragmentInteractionListener {
                     Constants.SINGLE_LINE_NOTE,
                     false
             )
-            NoteDb.getDatabase(context = this).noteDao().insert(note)
+
+            thread {
+                NoteDb.getDatabase(context = this).noteDao().insert(note)
+            }
 
             //Adding example note 2
-            note = Note(
+            var note2 = Note(
                     "Title2",
                     Constants.BIG_NOTE,
                     false
             )
-            NoteDb.getDatabase(context = this).noteDao().insert(note)
+
+            thread {
+                NoteDb.getDatabase(context = this).noteDao().insert(note2)
+            }
             getSharedPreferences(Constants.SHARED_PREF_NAME, MODE_PRIVATE).edit().putBoolean(Constants.FIRST_RUN_KEY, false).apply()
         }
     }
@@ -52,7 +59,7 @@ class MainActivity : AppCompatActivity(), NoteListFragmentInteractionListener {
         //Go to note Edit Fragment
     }
 
-    override fun onNoteClick() {
+    override fun onNoteClick(note: Note) {
         //Go to note Edit Fragment
     }
 }
