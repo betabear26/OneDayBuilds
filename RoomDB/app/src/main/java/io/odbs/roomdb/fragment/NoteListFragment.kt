@@ -67,7 +67,7 @@ class NoteListFragment : Fragment() {
             return
         }
 
-        no_note.visibility = View.VISIBLE
+        no_note.visibility = View.GONE
 
         if (pinnedList.isNotEmpty()) {
             pinned_notes_container.visibility = View.VISIBLE

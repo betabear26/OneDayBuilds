@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import io.odbs.roomdb.R
 import io.odbs.roomdb.db.Note
@@ -21,8 +22,8 @@ internal class NoteRVAdapter(
 
     override fun onBindViewHolder(holder: NoteViewHolder, position: Int) {
         val note = noteList[position]
-        holder.titleTextView.setText(note.title)
-        holder.contentTextView.setText(note.noteContent)
+        holder.titleTextView.text = note.title
+        holder.contentTextView.text = note.noteContent
         holder.viewParent.setOnClickListener {
             listener.onNoteClick(note)
         }
@@ -38,8 +39,8 @@ internal class NoteRVAdapter(
             itemView: View
     ): RecyclerView.ViewHolder(itemView) {
         var viewParent: View = itemView.findViewById(R.id.parent)
-        var titleTextView: EditText = itemView.findViewById(R.id.et_title)
-        var contentTextView: EditText = itemView.findViewById(R.id.et_content)
+        var titleTextView: TextView = itemView.findViewById(R.id.et_title)
+        var contentTextView: TextView = itemView.findViewById(R.id.et_content)
     }
 
 }

@@ -25,10 +25,10 @@ class MainActivity : AppCompatActivity(), NoteListFragmentInteractionListener {
         if(isFirstRun){
 
             //Adding example note 1
-            var note = Note(
+            val note = Note(
                 "Title1",
                     Constants.SINGLE_LINE_NOTE,
-                    false
+                    true
             )
 
             thread {
@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity(), NoteListFragmentInteractionListener {
             }
 
             //Adding example note 2
-            var note2 = Note(
+            val note2 = Note(
                     "Title2",
                     Constants.BIG_NOTE,
                     false
