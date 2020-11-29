@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="io.odbs.navigationcomponent.fragments.MainFragment"
+        android:label="MainFragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_viewTransactionFragment"
+            app:destination="@id/viewTransactionFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_chooseReceipientFragment"
+            app:destination="@id/chooseReceipientFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_viewBalanceFragment"
+            app:destination="@id/viewBalanceFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewTransactionFragment"
+        android:name="io.odbs.navigationcomponent.fragments.ViewTransactionFragment"
+        android:label="ViewTransactionFragment" />
+    <fragment
+        android:id="@+id/chooseReceipientFragment"
+        android:name="io.odbs.navigationcomponent.fragments.ChooseRecipientFragment"
+        android:label="ChooseReceipientFragment" >
+        <action
+            android:id="@+id/action_chooseReceipientFragment_to_speifyAmountFragment"
+            app:destination="@id/speifyAmountFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewBalanceFragment"
+        android:name="io.odbs.navigationcomponent.fragments.ViewBalanceFragment"
+        android:label="ViewBalanceFragment" />
+    <fragment
+        android:id="@+id/speifyAmountFragment"
+        android:name="io.odbs.navigationcomponent.fragments.SpeifyAmountFragment"
+        android:label="SpeifyAmountFragment" >
+        <action
+            android:id="@+id/action_speifyAmountFragment_to_confirmationFragment"
+            app:destination="@id/confirmationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/confirmationFragment"
+        android:name="io.odbs.navigationcomponent.fragments.ConfirmationFragment"
+        android:label="ConfirmationFragment" />
+</navigation>
