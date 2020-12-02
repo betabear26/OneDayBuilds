@@ -13,7 +13,7 @@
             app:destination="@id/viewTransactionFragment" />
         <action
             android:id="@+id/action_mainFragment_to_chooseReceipientFragment"
-            app:destination="@id/chooseReceipientFragment" />
+            app:destination="@id/chooseRecipientFragment" />
         <action
             android:id="@+id/action_mainFragment_to_viewBalanceFragment"
             app:destination="@id/viewBalanceFragment" />
@@ -23,27 +23,35 @@
         android:name="io.odbs.navigationcomponent.fragments.ViewTransactionFragment"
         android:label="ViewTransactionFragment" />
     <fragment
-        android:id="@+id/chooseReceipientFragment"
+        android:id="@+id/chooseRecipientFragment"
         android:name="io.odbs.navigationcomponent.fragments.ChooseRecipientFragment"
-        android:label="ChooseReceipientFragment" >
+        android:label="ChooseRecipientFragment">
         <action
             android:id="@+id/action_chooseReceipientFragment_to_speifyAmountFragment"
-            app:destination="@id/speifyAmountFragment" />
+            app:destination="@id/specifyAmountFragment" />
     </fragment>
     <fragment
         android:id="@+id/viewBalanceFragment"
         android:name="io.odbs.navigationcomponent.fragments.ViewBalanceFragment"
         android:label="ViewBalanceFragment" />
     <fragment
-        android:id="@+id/speifyAmountFragment"
-        android:name="io.odbs.navigationcomponent.fragments.SpeifyAmountFragment"
-        android:label="SpeifyAmountFragment" >
+        android:id="@+id/specifyAmountFragment"
+        android:name="io.odbs.navigationcomponent.fragments.SpecifyAmountFragment"
+        android:label="SpecifyAmountFragment">
         <action
-            android:id="@+id/action_speifyAmountFragment_to_confirmationFragment"
+            android:id="@+id/action_specifyAmountFragment_to_confirmationFragment"
             app:destination="@id/confirmationFragment" />
     </fragment>
     <fragment
         android:id="@+id/confirmationFragment"
         android:name="io.odbs.navigationcomponent.fragments.ConfirmationFragment"
-        android:label="ConfirmationFragment" />
+        android:label="ConfirmationFragment">
+
+        <argument android:name="recipient"
+            android:defaultValue="none"/>
+
+        <argument android:name="amount"
+            app:argType="io.odbs.navigationcomponent.utils.Money"/>
+
+    </fragment>
 </navigation>
