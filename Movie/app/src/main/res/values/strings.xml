@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Movie</string>
+    <string name="search">Search</string>
+    <string name="offline"><b>Offline</b>\nYour network is unavailable.\nCheck your data or wifi connection.</string>
+    <string name="retry">Retry</string>
+    <string name="still_offline">Still offline</string>
+    <string name="search_animation">searchAnimation</string>
 </resources>

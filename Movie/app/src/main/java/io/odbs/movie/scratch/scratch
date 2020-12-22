@@ -1,0 +1,29 @@
+
+API to search for movies with the search string
+
+http://www.omdbapi.com/?apikey={API_KEY}&s={SEARCH_STRING}&page={PAGE_NO}
+
+
+
+API to get the movie details
+
+http://www.omdbapi.com/?i={imdbID}&apikey={API_KEY}
+
+
+API KEY -> 8149c046
+
+
+
+T1. Design an app that will get the list of movies for the specified search term and display the results.
+
+    * Add Debounce in Search
+    * Add Loader whenever next page call happening
+    * Error Handling when API call fails
+    * Good to have if we can have a button to change the list to Grid view
+    * Error screen with Retry button
+    * App should not crash if any data is not coming.
+
+
+T2. Click on any movie, it should be able to take the user to the details screen.
+
+    * Support the open of this. page as deep link as well with. the pass of imdbId only
