@@ -8,9 +8,29 @@ import android.os.Build
 class NetworkUtil {
 
 
+
+
     //Checking if phone has an active network. Does not verify if the device is actually "online",
     //i.e. connected to the internet
     companion object {
+
+        private const val API_KEY: String = "8149c046"
+
+        fun getApiKey() = API_KEY
+
+        fun getBaseUrl() : String{
+            return "http://www.omdbapi.com/"
+        }
+
+        fun getSearchUrl(searchString: String, pageNumber: Int): String{
+            return "http://www.omdbapi.com/?apikey=$API_KEY&s=$searchString&page=$pageNumber"
+        }
+
+        fun getMovieDetailUrl(imdbId: String): String {
+            return "http://www.omdbapi.com/?i=$imdbId&apikey=$API_KEY"
+        }
+
+
         @Suppress("deprecation")
         fun isInternetConnected(context: Context): Boolean {
             val cm = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
