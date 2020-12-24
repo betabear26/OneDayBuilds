@@ -11,22 +11,27 @@ import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.NavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import io.odbs.movie.adapter.SearchListAdapter
 import io.odbs.movie.databinding.FragmentSearchBinding
+import io.odbs.movie.util.SearchAdapterInteractionListener
 import io.odbs.movie.viewmodel.SearchResultViewModel
 
-class SearchFragment : Fragment() {
+class SearchFragment : Fragment(), SearchAdapterInteractionListener {
 
 
     private lateinit var navController: NavController
     private var _binding: FragmentSearchBinding? = null
 
     private val binding get() = _binding!!
-
     private lateinit var searchResultViewModel: SearchResultViewModel
+
+    private lateinit var searchListAdapter: SearchListAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        sharedElementEnterTransition = TransitionInflater.from(requireContext()).inflateTransition(android.R.transition.move)
+        sharedElementEnterTransition =
+            TransitionInflater.from(requireContext()).inflateTransition(android.R.transition.move)
     }
 
 
@@ -38,17 +43,22 @@ class SearchFragment : Fragment() {
         _binding = FragmentSearchBinding.inflate(inflater, container, false)
         binding.searchView.setIconifiedByDefault(false)
 
-        if(binding.searchView.requestFocus()) {
+        if (binding.searchView.requestFocus()) {
             val inputMethodManager =
                 requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
             inputMethodManager.showSoftInput(view, InputMethodManager.SHOW_IMPLICIT)
         }
 
+        binding.searchList.layoutManager = LinearLayoutManager(requireContext())
+
         searchResultViewModel = ViewModelProviders.of(this).get(SearchResultViewModel::class.java)
         searchResultViewModel.observer.observe(viewLifecycleOwner,
-            { t -> println(t?.totalResults) })
+            { t ->
+                searchListAdapter = SearchListAdapter(t, this)
+                binding.searchList.adapter = searchListAdapter
+            })
 
-        binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
+        binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 searchResultViewModel.callSearchApi(query!!, 1)
                 return false
