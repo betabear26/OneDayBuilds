@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/keypadv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.25" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/keypadv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.50" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/keypadv3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.75" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/keypadh1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/keypadh2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.4" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/keypadh3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.6" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/keypadh4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.8" />
+
+    <!-- Bottom row-->
+    <TextView
+        android:id="@+id/decimal"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="."
+        android:gravity="center"
+        android:textSize="40sp"
+        android:textColor="@color/white"
+        android:background="@color/cardview_dark_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/keypadv1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/keypadh4" />
+
+    <TextView
+        android:id="@+id/zero"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="0"
+        android:gravity="center"
+        android:textSize="40sp"
+        android:textColor="@color/white"
+        android:background="@color/cardview_dark_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/keypadv2"
+        app:layout_constraintStart_toStartOf="@+id/keypadv1"
+        app:layout_constraintTop_toTopOf="@+id/keypadh4" />
+
+    <TextView
+        android:id="@+id/bracket"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="( )"
+        android:gravity="center"
+        android:textSize="40sp"
+        android:textColor="@color/white"
+        android:background="@color/cardview_dark_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/keypadv3"
+        app:layout_constraintStart_toStartOf="@+id/keypadv2"
+        app:layout_constraintTop_toTopOf="@+id/keypadh4" />
+
+    <TextView
+        android:id="@+id/equals"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="="
+        android:gravity="center"
+        android:textSize="40sp"
+        android:textColor="@color/white"
+        android:background="@color/teal_200"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/keypadv3"
+        app:layout_constraintTop_toTopOf="@+id/keypadh4" />
+
+    <!-- 1st row-->
+    <TextView
+        android:id="@+id/one"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="1"
+        android:gravity="center"
+        android:textSize="40sp"
+        android:textColor="@color/white"
+        android:background="@color/cardview_dark_background"
+        app:layout_constraintBottom_toTopOf="@id/keypadh4"
+        app:layout_constraintEnd_toStartOf="@+id/keypadv1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/keypadh3" />
+
+    <TextView
+        android:id="@+id/two"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="2"
+        android:gravity="center"
+        android:textSize="40sp"
+        android:textColor="@color/white"
+        android:background="@color/cardview_dark_background"
+        app:layout_constraintBottom_toTopOf="@id/keypadh4"
+        app:layout_constraintEnd_toStartOf="@+id/keypadv2"
+        app:layout_constraintStart_toStartOf="@+id/keypadv1"
+        app:layout_constraintTop_toBottomOf="@+id/keypadh3" />
+
+    <TextView
+        android:id="@+id/three"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="3"
+        android:gravity="center"
+        android:textSize="40sp"
+        android:textColor="@color/white"
+        android:background="@color/cardview_dark_background"
+        app:layout_constraintBottom_toTopOf="@id/keypadh4"
+        app:layout_constraintEnd_toStartOf="@+id/keypadv3"
+        app:layout_constraintStart_toStartOf="@+id/keypadv2"
+        app:layout_constraintTop_toBottomOf="@+id/keypadh3" />
+
+    <TextView
+        android:id="@+id/plus"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="+"
+        android:gravity="center"
+        android:textSize="40sp"
+        android:textColor="@color/teal_200"
+        android:background="@color/cardview_dark_background"
+        app:layout_constraintBottom_toTopOf="@id/keypadh4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/keypadv3"
+        app:layout_constraintTop_toBottomOf="@+id/keypadh3" />
+
+    <!-- 2nd row-->
+    <TextView
+        android:id="@+id/four"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="4"
+        android:gravity="center"
+        android:textSize="40sp"
+        android:textColor="@color/white"
+        android:background="@color/cardview_dark_background"
+        app:layout_constraintBottom_toTopOf="@id/keypadh3"
+        app:layout_constraintEnd_toStartOf="@+id/keypadv1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/keypadh2" />
+
+    <TextView
+        android:id="@+id/five"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="5"
+        android:gravity="center"
+        android:textSize="40sp"
+        android:textColor="@color/white"
+        android:background="@color/cardview_dark_background"
+        app:layout_constraintBottom_toTopOf="@id/keypadh3"
+        app:layout_constraintEnd_toStartOf="@+id/keypadv2"
+        app:layout_constraintStart_toStartOf="@+id/keypadv1"
+        app:layout_constraintTop_toBottomOf="@+id/keypadh2" />
+
+    <TextView
+        android:id="@+id/six"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="6"
+        android:gravity="center"
+        android:textSize="40sp"
+        android:textColor="@color/white"
+        android:background="@color/cardview_dark_background"
+        app:layout_constraintBottom_toTopOf="@id/keypadh3"
+        app:layout_constraintEnd_toStartOf="@+id/keypadv3"
+        app:layout_constraintStart_toStartOf="@+id/keypadv2"
+        app:layout_constraintTop_toBottomOf="@+id/keypadh2" />
+
+    <TextView
+        android:id="@+id/minus"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="-"
+        android:gravity="center"
+        android:textSize="40sp"
+        android:textColor="@color/teal_200"
+        android:background="@color/cardview_dark_background"
+        app:layout_constraintBottom_toTopOf="@id/keypadh3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/keypadv3"
+        app:layout_constraintTop_toBottomOf="@+id/keypadh2" />
+
+
+    <!-- 3rd row-->
+    <TextView
+        android:id="@+id/seven"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="7"
+        android:gravity="center"
+        android:textSize="40sp"
+        android:textColor="@color/white"
+        android:background="@color/cardview_dark_background"
+        app:layout_constraintBottom_toTopOf="@id/keypadh2"
+        app:layout_constraintEnd_toStartOf="@+id/keypadv1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/keypadh1" />
+
+    <TextView
+        android:id="@+id/eight"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="8"
+        android:gravity="center"
+        android:textSize="40sp"
+        android:textColor="@color/white"
+        android:background="@color/cardview_dark_background"
+        app:layout_constraintBottom_toTopOf="@id/keypadh2"
+        app:layout_constraintEnd_toStartOf="@+id/keypadv2"
+        app:layout_constraintStart_toStartOf="@+id/keypadv1"
+        app:layout_constraintTop_toBottomOf="@+id/keypadh1" />
+
+    <TextView
+        android:id="@+id/nine"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="9"
+        android:gravity="center"
+        android:textSize="40sp"
+        android:textColor="@color/white"
+        android:background="@color/cardview_dark_background"
+        app:layout_constraintBottom_toTopOf="@id/keypadh2"
+        app:layout_constraintEnd_toStartOf="@+id/keypadv3"
+        app:layout_constraintStart_toStartOf="@+id/keypadv2"
+        app:layout_constraintTop_toBottomOf="@+id/keypadh1" />
+
+    <TextView
+        android:id="@+id/multiply"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="x"
+        android:gravity="center"
+        android:textSize="40sp"
+        android:textColor="@color/teal_200"
+        android:background="@color/cardview_dark_background"
+        app:layout_constraintBottom_toTopOf="@id/keypadh2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/keypadv3"
+        app:layout_constraintTop_toBottomOf="@+id/keypadh1" />
+
+    <!-- 4th row-->
+    <TextView
+        android:id="@+id/allclear"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="AC"
+        android:gravity="center"
+        android:textSize="40sp"
+        android:textColor="@color/white"
+        android:background="@color/cardview_dark_background"
+        app:layout_constraintBottom_toTopOf="@id/keypadh1"
+        app:layout_constraintEnd_toStartOf="@+id/keypadv1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/backspace"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="←"
+        android:gravity="center"
+        android:textSize="40sp"
+        android:textColor="@color/white"
+        android:background="@color/cardview_dark_background"
+        app:layout_constraintBottom_toTopOf="@id/keypadh1"
+        app:layout_constraintEnd_toStartOf="@+id/keypadv2"
+        app:layout_constraintStart_toStartOf="@+id/keypadv1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/percent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="%"
+        android:gravity="center"
+        android:textSize="40sp"
+        android:textColor="@color/white"
+        android:background="@color/cardview_dark_background"
+        app:layout_constraintBottom_toTopOf="@id/keypadh1"
+        app:layout_constraintEnd_toStartOf="@+id/keypadv3"
+        app:layout_constraintStart_toStartOf="@+id/keypadv2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/divide"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="÷"
+        android:gravity="center"
+        android:textSize="40sp"
+        android:textColor="@color/teal_200"
+        android:background="@color/cardview_dark_background"
+        app:layout_constraintBottom_toTopOf="@id/keypadh1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/keypadv3"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
